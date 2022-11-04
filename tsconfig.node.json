@@ -4,7 +4,8 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["chrome"]
   },
   "include": ["vite.config.ts", "package.json", "manifest.config.ts"]
 }

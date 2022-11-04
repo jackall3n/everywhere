@@ -12,10 +12,15 @@ export default defineManifest(async (env) => ({
   name: "Everywhere",
   version: `${major}.${minor}.${patch}.${label}`,
   version_name: version,
+  permissions: ["cookies", "activeTab", "tabs"],
+  background: {
+    service_worker: "src/background.ts",
+    type: "module",
+  },
   content_scripts: [
     {
       js: ["src/content.tsx"],
-      matches: ["*"],
+      matches: ["<all_urls>"],
     },
   ],
 }));
