@@ -1,0 +1,36 @@
+.everywhere {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: white;
+  font-weight: 500;
+  font-family: Arial, serif;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+}
+
+#crx-root {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.group {
+  margin-bottom: 1rem;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  row-gap: 0;
+}
+
+.member {
+  display: contents;
+}

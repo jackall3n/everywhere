@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import qs from "query-string";
+import "./container.css";
 
 console.log();
 
@@ -69,8 +67,107 @@ function initialise() {
 
 initialise();
 
+function group(name: string, members: string) {
+  return {
+    name,
+    members: members
+      .trim()
+      .split("\n")
+      .map((m) => {
+        const [id, postcode] = m.split("\t").map((t) => t.trim());
+        return member(id, postcode);
+      }),
+  };
+}
+
+function member(id: string, postcode: string) {
+  return {
+    id,
+    postcode,
+  };
+}
+
+const group1 = `
+4145617314\tBN11 2BA
+1040388612\tBN11 2BA
+239424675\tSE13 7FH
+2019260471\tBN13 2UA
+633174027\tSE12 0TQ
+485636383\tSE12 0TQ
+`;
+
+const group2 = `
+684207947\tBN12 4EF
+709762502\tBN12 4EF
+2440000882\tBN15 8BG
+1699879142\tBN11 5SL
+2330339566\tSE23 2EE
+`;
+
+const groups = [group("Group 1", group1), group("Group 2", group2)];
+
+function set(index: number, id: string, postcode: string) {
+  const _id = document.getElementById(
+    `registrations_${index}__RegistrationId`
+  ) as HTMLInputElement;
+  const _postCode = document.getElementById(
+    `registrations_${index}__PostCode`
+  ) as HTMLInputElement;
+
+  if (_id) {
+    _id.value = id;
+  }
+  if (_postCode) {
+    _postCode.value = postcode;
+  }
+}
+
 function Container() {
-  return <div></div>;
+  function addGroup(g: ReturnType<typeof group>) {
+    console.log({ g });
+
+    set(0, "", "");
+    set(1, "", "");
+    set(2, "", "");
+    set(3, "", "");
+    set(4, "", "");
+    set(5, "", "");
+
+    g.members.forEach((member, index) =>
+      set(index, member.id, member.postcode)
+    );
+  }
+
+  if (!window.location.pathname.includes("event")) {
+    return null;
+  }
+
+  return (
+    <div className="everywhere">
+      <div className="groups">
+        {groups.map((group) => (
+          <button
+            key={group.name}
+            className="group"
+            onClick={() => addGroup(group)}
+          >
+            <div>
+              <strong>{group.name}</strong>
+            </div>
+
+            <div className="members">
+              {group.members.map((member) => (
+                <div key={member.id} className="member">
+                  <div>{member.id}</div>
+                  <div>{member.postcode}</div>
+                </div>
+              ))}
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Container;

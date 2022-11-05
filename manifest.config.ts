@@ -20,7 +20,12 @@ export default defineManifest(async (env) => ({
   content_scripts: [
     {
       js: ["src/content.tsx"],
-      matches: ["<all_urls>"],
+      matches: [
+        "https://glastonbury.seetickets.com/*",
+        "https://glastonbury.seetickets.com",
+        "http://glastonbury.seetickets.com/*",
+        "http://glastonbury.seetickets.com"
+      ],
     },
   ],
 }));
