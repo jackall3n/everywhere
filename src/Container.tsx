@@ -104,7 +104,14 @@ const group2 = `
 2330339566\tSE23 2EE
 `;
 
-const groups = [group("Group 1", group1), group("Group 2", group2)];
+const group3 = `
+1963150860\tBN1 5NQ
+1272054560\tBN1 5NQ
+1229592776\tBN2 3HR
+2622752968\tBN2 3HR
+`;
+
+const groups = [group("Group 1", group1), group("Group 2", group2), group("Group 3", group3)];
 
 function set(index: number, id: string, postcode: string) {
   const _id = document.getElementById(
