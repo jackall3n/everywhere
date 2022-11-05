@@ -15,7 +15,7 @@
   "content_scripts": [
     {
       "js": [
-        "assets/content.tsx-loader.4a0338bd.js"
+        "assets/content.tsx-loader.087894b6.js"
       ],
       "matches": [
         "https://glastonbury.seetickets.com/*",
@@ -33,7 +33,7 @@
         "https://glastonbury.seetickets.com/*"
       ],
       "resources": [
-        "assets/content.tsx.0f5262c0.js"
+        "assets/content.tsx.b449b2e8.js"
       ],
       "use_dynamic_url": true
     }
