@@ -19,9 +19,7 @@
       ],
       "matches": [
         "https://glastonbury.seetickets.com/*",
-        "https://glastonbury.seetickets.com",
-        "http://glastonbury.seetickets.com/*",
-        "http://glastonbury.seetickets.com"
+        "http://glastonbury.seetickets.com/*"
       ],
       "css": [
         "assets/content.1a3651b3.css"
@@ -31,9 +29,7 @@
   "web_accessible_resources": [
     {
       "matches": [
-        "http://glastonbury.seetickets.com",
         "http://glastonbury.seetickets.com/*",
-        "https://glastonbury.seetickets.com",
         "https://glastonbury.seetickets.com/*"
       ],
       "resources": [
